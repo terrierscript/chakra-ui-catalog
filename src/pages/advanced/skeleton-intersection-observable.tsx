@@ -1,6 +1,6 @@
 
 import { Box, Button, Skeleton, Stack, Text } from "@chakra-ui/react"
-import React, { FC, useEffect, useRef, useState } from "react"
+import React, { FC, useCallback, useEffect, useRef, useState } from "react"
 import { useIntersection } from "use-intersection"
 import { LoremIpsum } from "lorem-ipsum"
 
@@ -17,22 +17,15 @@ export const LazyElement: FC<{}> = ({ children }) => {
     once: true,
   })
 
-  console.log(intersecting)
-  return <div ref={ref}>
+  return <div ref={ref}> {/* <Box ref={ref}> でも可 */}
     {intersecting ? children : <LoadingSkeleton />}
   </div>
 }
 
 const lorem = new LoremIpsum()
-const lazyLoremIpsum = () => {
-  return new Promise((res) => {
-    setTimeout(() => {
-      res(lorem.generateParagraphs(7))
-    }, 1000)
-  })
-}
+
 const LoreimIpsum = () => {
-  const [sampleText, setSampleText] = useState<string>(() => lorem.generateParagraphs(7))
+  const [sampleText] = useState<string>(() => lorem.generateParagraphs(7))
   return <Box>
     <Text>
       {sampleText}
@@ -40,23 +33,33 @@ const LoreimIpsum = () => {
   </Box>
 }
 
-const Page = () => {
-  const [startLoad, setStartLoad] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [texts, setTexts] = useState(() => {
-    return [...Array(30)].map(() => lorem.generateParagraphs(7))
-  })
-  return <Stack>
-    {/* <Button></Button> */}
+const LazyLoadSample = () => {
+  const [texts, setState] = useState<string[]>([])
+  const append = useCallback(() => {
+    const num = Math.ceil(Math.random() * 8)
+    const newDummyText = [...Array(10)].map(() => lorem.generateSentences(num))
+    setState([...texts, ...newDummyText])
+  }, [texts])
+  return <Stack p={10} gap={10}>
     {texts.map((text, i) => {
-      return <LazyElement key={i}>
-        <Box p={10}>
+      return <Box key={i} p={10} boxShadow="base">
+        <LazyElement >
           <Text>{text}</Text>
           <LoreimIpsum />
-        </Box>
-      </LazyElement>
+        </LazyElement>
+      </Box>
     })}
+    <Button w="100%" onClick={() => {
+      append()
+    }}>Add Text</Button>
   </Stack>
+
+}
+
+const Page = () => {
+  return <Box>
+    <LazyLoadSample />
+  </Box>
 }
 
 export default Page
