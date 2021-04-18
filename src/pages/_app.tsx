@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons"
-import { Box, ChakraProvider, Divider, HStack } from "@chakra-ui/react"
+import { Box, ChakraProvider, Container, Divider, HStack } from "@chakra-ui/react"
 import React, { useMemo } from "react"
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
     const pathname = window.location.pathname
     const initialPath = encodeURIComponent(pathname)
     const module = encodeURIComponent(`/src/pages/${pathname}.tsx`)
-    return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark&editorsize=50`
+    return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark&runonclick=1&view=split`
   }, [])
 
   return <Box p={4} fontSize={"xs"} color={"gray.400"}>
@@ -24,7 +24,9 @@ const Footer = () => {
 }
 function MyApp({ Component, pageProps }: any) {
   return <ChakraProvider>
-    <Component {...pageProps} />
+    <Container p={4} marginVertical={4} boxShadow="base">
+      <Component {...pageProps} />
+    </Container>
     <Footer />
   </ChakraProvider>
 }
