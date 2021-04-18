@@ -15,10 +15,8 @@ export const LazyLoadingAccordion: FC<{ title: ReactNode }> = ({ title, children
             </Box>
           </HStack>
         </AccordionButton>
-        <AccordionPanel p={0} >
-          <Box p={4}>
-            {loaded ? children : <Spinner />}
-          </Box>
+        <AccordionPanel >
+          {loaded ? children : <Spinner />}
         </AccordionPanel>
       </>
     }}

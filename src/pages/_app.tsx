@@ -24,7 +24,7 @@ const Footer = () => {
 }
 function MyApp({ Component, pageProps }: any) {
   return <ChakraProvider>
-    <Container p={4} marginVertical={4} boxShadow="base">
+    <Container p={4} mt={4} boxShadow="base">
       <Component {...pageProps} />
     </Container>
     <Footer />
