@@ -6,10 +6,10 @@ const Footer = () => {
   const url = useMemo(() => {
     const pathname = window.location.pathname
     const initialPath = encodeURIComponent(pathname)
-    const module = encodeURIComponent(`src/pages/${pathname}.tsx`)
+    const module = encodeURIComponent(`/src/pages/${pathname}.tsx`)
     return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark`
-
   }, [])
+
   return <Box p={4} fontSize={"xs"} color={"gray.400"}>
     <Divider />
     <HStack p={4}>
