@@ -7,7 +7,7 @@ const Footer = () => {
     const pathname = window.location.pathname
     const initialPath = encodeURIComponent(pathname)
     const module = encodeURIComponent(`/src/pages/${pathname}.tsx`)
-    return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark`
+    return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark&editorsize=50`
   }, [])
 
   return <Box p={4} fontSize={"xs"} color={"gray.400"}>
