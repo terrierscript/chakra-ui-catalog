@@ -10,7 +10,6 @@ const Page = () => {
     <Tabs
       onChange={(idx) => { location.hash = `#${tabMap[idx]}` }}
       defaultIndex={initialTab}
-
     >
       <TabList>
         <Tab>
