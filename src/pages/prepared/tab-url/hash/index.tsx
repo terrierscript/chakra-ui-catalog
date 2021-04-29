@@ -1,11 +1,16 @@
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
-import React from "react"
+import React, { useMemo } from "react"
 
 const tabMap = [
   "foo", "baz"
 ]
 const Page = () => {
-  const initialTab = Math.max(tabMap.indexOf(location.hash.replace("#", "")), 0)
+  const initialTab = useMemo(() => {
+    if (typeof location === "undefined") {
+      return 0
+    }
+    return Math.max(tabMap.indexOf(location.hash.replace("#", "")), 0)
+  }, [])
   return <Box>
     <Tabs
       onChange={(idx) => { location.hash = `#${tabMap[idx]}` }}
