@@ -27,7 +27,7 @@ export default function Home({ pathnames }: { pathnames: string[] }) {
     <Box p={10}>
       <Stack>
         {pathnames.map(p => {
-          return <NextLink href={p}>{p}</NextLink>
+          return <NextLink key={p} href={p}>{p}</NextLink>
         })}
       </Stack>
     </Box>
