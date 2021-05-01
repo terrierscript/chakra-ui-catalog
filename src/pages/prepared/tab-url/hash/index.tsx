@@ -2,7 +2,7 @@ import { Box, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
 import React, { useMemo } from "react"
 
 const tabMap = [
-  "foo", "baz"
+  "dog", "cat"
 ]
 const Page = () => {
   const initialTab = useMemo(() => {
@@ -26,10 +26,10 @@ const Page = () => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          1
+          🐶
         </TabPanel>
         <TabPanel>
-          2
+          🐱
         </TabPanel>
       </TabPanels>
     </Tabs>

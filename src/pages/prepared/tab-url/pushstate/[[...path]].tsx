@@ -3,7 +3,7 @@ import React, { FC } from "react"
 import { useRouter } from "next/router"
 import { GetServerSideProps } from "next"
 const tabMap = [
-  "foo", "baz"
+  "dog", "cat"
 ]
 const Page: FC<{ path: string }> = ({ path }) => {
   const router = useRouter()
@@ -36,10 +36,10 @@ const Page: FC<{ path: string }> = ({ path }) => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          1
+          🐶
         </TabPanel>
         <TabPanel>
-          2
+          🐱
         </TabPanel>
       </TabPanels>
     </Tabs>
