@@ -1,0 +1,3 @@
+{
+  "startScript": "yarn build; yarn start"
+}
