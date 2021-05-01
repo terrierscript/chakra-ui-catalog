@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import React from 'react'
 import NextLink from "next/link"
 // @ts-ignore
@@ -12,17 +11,20 @@ export const getServerSideProps = async () => {
       const pathname = file
         .replace("src/pages/", "") // remove basedir
         .replace(/.[jt]sx?$/, "") // remove exteension
+        .replace("index", "")
+      if(pathname === ""){
+        return "/"
+      }
       return pathname
     })
-    .filter((file: string) => !/^_.+/.test(file))
-    .filter((file: string) => file !== "index")
+    .filter((file: string) => !/^_.+/.test(file)) // remove _xxx
+    .sort()
   return {
     props: { pathnames }
   }
 }
 
 export default function Home({ pathnames }: { pathnames: string[] }) {
-
   return (
     <Box p={10}>
       <Stack>
