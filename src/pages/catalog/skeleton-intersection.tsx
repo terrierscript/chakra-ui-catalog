@@ -25,7 +25,7 @@ export const LazyElement: FC<{}> = ({ children }) => {
 const lorem = new LoremIpsum()
 
 const LoreimIpsum = () => {
-  const [sampleText] = useState<string>(() => lorem.generateParagraphs(7))
+  const [sampleText] = useState<string>(() => lorem.generateParagraphs(1))
   return <Box>
     <Text>
       {sampleText}
