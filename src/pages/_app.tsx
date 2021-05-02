@@ -8,10 +8,13 @@ const Footer = () => {
     const pathname = window.location.pathname
     const initialPath = encodeURIComponent(pathname)
     const module = encodeURIComponent(`/src/pages/${pathname}.tsx`)
-    return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark&runonclick=1&view=split`
-  }, [])
+    return `https://codesandbox.io/embed/github/terrierscript/chakra-ui-sandbox/tree/main/?fontsize=14&initialpath=${initialPath}&module=${module}&theme=dark&view=split`
+  }, [window.location.pathname])
 
-   return <Box p={4} fontSize={"xs"} color={"gray.400"} >
+  if (window.location.host.includes("codesandbox.io")) {
+    return null
+  }
+  return <Box p={4} fontSize={"xs"} color={"gray.400"} >
     <Divider />
     <HStack p={4}>
       <Box userSelect="all" overflowWrap="anywhere">
@@ -26,7 +29,7 @@ const Footer = () => {
 function MyApp({ Component, pageProps }: any) {
   return <ChakraProvider>
     <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
     <Container p={4} mt={4} boxShadow="base" maxW="container.sm" >
       <Component {...pageProps} />
