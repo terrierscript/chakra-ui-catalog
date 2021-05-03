@@ -29,6 +29,7 @@ const Footer = () => {
 function MyApp({ Component, pageProps }: any) {
   return <ChakraProvider>
     <Head>
+      <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
     <Container p={4} mt={4} boxShadow="base" maxW="container.sm" >
