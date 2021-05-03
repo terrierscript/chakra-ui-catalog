@@ -28,15 +28,13 @@ const Footer = () => {
 }
 function MyApp({ Component, pageProps }: any) {
   return <ChakraProvider>
-    <Box w={"fit-content"} h={"fit-content"} bg={"gray.50"}>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Container p={4} mt={4} boxShadow="base" maxW="container.sm" >
-        <Component {...pageProps} />
-      </Container>
-      <Footer />
-    </Box>
+    <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </Head>
+    <Container p={4} mt={4} boxShadow="base" maxW="container.sm" >
+      <Component {...pageProps} />
+    </Container>
+    <Footer />
   </ChakraProvider>
 }
 
