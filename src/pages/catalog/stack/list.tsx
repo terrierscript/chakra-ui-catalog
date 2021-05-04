@@ -37,19 +37,10 @@ const Page = () => {
     <Box>
       {sampleText.map(item => <Box bg="red.50" p={2}>{item}</Box>)}
     </Box>
-    {/* <Heading>Box</Heading>
-    <Box gridGap={2} display="flex" flexDirection="column">
-    {sampleText.map(item => <Box bg="red.50" p={2}>{item}</Box>)}
-  </Box> */}
     <Heading>Stack</Heading>
     <Stack>
       {sampleText.map(item => <Box bg="red.50" p={2}>{item}</Box>)}
     </Stack>
-    <Heading size="lg">Box</Heading>
-    <TweetLikeBox />
-
-    <Heading size="lg">Stack</Heading>
-    <TweetLike />
     {/* <Heading>Grid</Heading>
     <Grid gap={2}>
       {sampleText.map(item => <Box bg="red.50" p={2}>{item}</Box>)}
