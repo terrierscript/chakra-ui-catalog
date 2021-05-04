@@ -17,7 +17,6 @@ const Page = () => {
     <Box p={2} bg={{ base: "red.200", md: "green.200", lg: "blue.200" }} >
       {`{ base: "red.200", md: "green.200", lg: "blue.200" }`}
     </Box>
-    <SwitchMobile />
   </Stack>
 }
 

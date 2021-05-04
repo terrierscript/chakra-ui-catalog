@@ -5,9 +5,9 @@ import React from "react"
 const SwitchMobile = () => {
   const isMobile = useBreakpointValue({ base: true, md: false })
   if (isMobile) {
-    return <Box>Hello Mobile</Box>
+    return <Box bg="red.100" p={4}>Hello Mobile</Box>
   }
-  return <Box>Hello Desktop</Box>
+  return <Box bg="blue.100" >Hello Desktop</Box>
 }
 
 const Page = () => {
@@ -15,9 +15,9 @@ const Page = () => {
 
   return <Stack>
     <Box>Current Size:{breakpointValue}</Box>
-
-    <SwitchMobile />
-
+    <Box >
+      <SwitchMobile />
+    </Box>
   </Stack>
 }
 export default Page
