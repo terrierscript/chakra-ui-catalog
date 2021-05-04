@@ -6,9 +6,8 @@ const tabMap = [
   "dog", "cat"
 ]
 const Page: FC<{ path: string }> = ({ path }) => {
-  const router = useRouter()
-  // @ts-ignore
   const initialTab = Math.max(tabMap.indexOf(path), 0)
+  const router = useRouter()
 
   return <Box>
     <Tabs
@@ -18,13 +17,9 @@ const Page: FC<{ path: string }> = ({ path }) => {
           query: {
             path: [tabMap[idx]]
           }
-        }, undefined,
-          { shallow: true }
-        )
-        // location.hash = `#${tabMap[idx]}`
+        }, undefined, { shallow: true })
       }}
       defaultIndex={initialTab}
-
     >
       <TabList>
         <Tab>
@@ -45,10 +40,12 @@ const Page: FC<{ path: string }> = ({ path }) => {
     </Tabs>
   </Box>
 }
+
 export const getServerSideProps: GetServerSideProps = async (req) => {
-  const path = req.query.path?.[0]
+  const path = req.query.path?.[0] ?? null
   return {
     props: { path }
   }
 }
+
 export default Page
