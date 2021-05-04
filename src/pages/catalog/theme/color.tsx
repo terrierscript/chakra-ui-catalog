@@ -1,9 +1,9 @@
 import { Box, Tabs, TabList, Tab, TabPanels, TabPanel, Stack, Button, Heading } from "@chakra-ui/react"
-import React from "react"
+import React, { FC } from "react"
 
-const ThemedTab = () => {
+const ThemedTab: FC<{ colorScheme?: string }> = ({ colorScheme }) => {
   return <Box>
-    <Tabs colorScheme="red">
+    <Tabs {...{ colorScheme }}>
       <TabList>
         <Tab>
           dog
@@ -47,10 +47,6 @@ const Page = () => {
     <Stack p={4}>
       <Heading size="md">colorScheme="yellow" Button</Heading>
       <Button colorScheme="yellow">Yellow Button</Button>
-    </Stack>
-    <Stack>
-      <Heading size="md">colorScheme="red" Tab</Heading>
-      <ThemedTab />
     </Stack>
   </Stack>
 }
