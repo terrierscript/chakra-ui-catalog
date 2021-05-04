@@ -4,6 +4,7 @@ import React, { useMemo } from "react"
 const tabMap = [
   "dog", "cat"
 ]
+
 const Page = () => {
   const initialTab = useMemo(() => {
     if (typeof location === "undefined") {
@@ -35,4 +36,5 @@ const Page = () => {
     </Tabs>
   </Box>
 }
+
 export default Page

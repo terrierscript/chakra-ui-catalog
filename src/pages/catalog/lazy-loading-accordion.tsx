@@ -32,7 +32,7 @@ const LoadingItem = () => {
     }, 3000)
   }, [])
   if (!text) {
-    return <Box><Spinner />Loading ...</Box>
+    return <HStack><Spinner /><Box>Loading ...</Box></HStack>
   }
   return <Box>{text}</Box>
 }
