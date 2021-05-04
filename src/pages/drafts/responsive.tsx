@@ -1,10 +1,10 @@
 import { Box, Stack, useBreakpointValue } from "@chakra-ui/react"
 import React from "react"
 
-const ShowOnlyMobile = () => {
+const SwitchMobile = () => {
   const isMobile = useBreakpointValue({ base: true, md: false })
   if (isMobile) {
-    return null
+    return <Box>Hello Mobile</Box>
   }
   return <Box>Hello Desktop</Box>
 }
@@ -25,7 +25,7 @@ const Page = () => {
     <Box p={2} bg={{ base: "red.200", md: "green.200", lg: "blue.200" }} >
       {`{ base: "red.200", md: "green.200", lg: "blue.200" }`}
     </Box>
-    <ShowOnlyMobile />
+    <SwitchMobile />
   </Stack>
 }
 
