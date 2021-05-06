@@ -28,7 +28,6 @@ const Footer = () => {
 }
 
 function MyApp({ Component, pageProps }: any) {
-  console.log("cc", Component.containerSize)
   return <ChakraProvider>
     <Head>
       <meta charSet="utf-8" />
