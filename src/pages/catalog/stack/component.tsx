@@ -1,10 +1,10 @@
-import { Grid, Box, Flex, Heading, SimpleGrid, Stack, HStack, VStack, Avatar } from "@chakra-ui/react"
-import React, { FC, useMemo } from "react"
+import {Box, Heading, Stack, HStack, Avatar } from "@chakra-ui/react"
+import React, {  } from "react"
 import { LoremIpsum } from "lorem-ipsum"
 
 const lorem = new LoremIpsum()
 
-const TweetLike = () => {
+const CommentWithStack = () => {
   return <HStack>
     <Avatar></Avatar>
     <Stack>
@@ -14,11 +14,11 @@ const TweetLike = () => {
   </HStack>
 }
 
-const TweetLikeBox = () => {
+const CommentWithBox = () => {
   return <Box display="flex" flexDirection="row">
     <Avatar></Avatar>
     <Box>
-      <Heading size="sm">Some member</Heading>
+      <Heading size="sm">lorem ipsum</Heading>
       <Box>あのイーハトーヴォのすきとほった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモーリオ市、郊外のぎらぎらひかる草の波</Box>
     </Box>
   </Box>
@@ -28,10 +28,10 @@ const Page = () => {
 
   return <Stack>
     <Heading size="lg">Box</Heading>
-    <TweetLikeBox />
+    <CommentWithBox />
 
     <Heading size="lg">Stack</Heading>
-    <TweetLike />
+    <CommentWithStack />
   </Stack>
 }
 export default Page
