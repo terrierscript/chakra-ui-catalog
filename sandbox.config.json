@@ -1,3 +1,4 @@
 {
-  "startScript": "yarn build; yarn start"
+  "startScript": "start"
+  
 }
